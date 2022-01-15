@@ -4,7 +4,7 @@
 <div class="container my-4">
     <a href="{{ route('post.edit', $post) }}" class="btn btn-sm btn-primary">Edit</a>
     <span class="btn btn-sm btn-danger" style="cursor: pointer" onclick="event.preventDefault();document.getElementById('deleteThisPost').submit();">Delete</span>
-    <h1>{{ $post->title }}</h1>
+    <h1 class="mt-3">{{ $post->title }}</h1>
     <p>{{ $post->body }}</p>
     <form action="{{ route('post.destroy', $post) }}" method="post" id="deleteThisPost">
         @csrf
