@@ -6,7 +6,9 @@
 
 @section('content')
 <div class="container my-4">
+    @auth
     <a href="{{ route('post.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+    @endauth
     <div class="d-flex flex-column my-4" style="gap: 1rem;">
         @foreach ($posts as $post)
         <div>
