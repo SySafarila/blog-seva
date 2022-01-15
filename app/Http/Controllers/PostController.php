@@ -56,7 +56,7 @@ class PostController extends Controller
      */
     public function show($post)
     {
-        $post = Post::find($post);
+        $post = Post::findOrFail($post);
 
         return view('post.show', compact('post'));
     }
@@ -69,7 +69,7 @@ class PostController extends Controller
      */
     public function edit($post)
     {
-        $post = Post::find($post);
+        $post = Post::findOrFail($post);
 
         return view('post.edit', compact('post'));
     }
@@ -83,7 +83,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $post)
     {
-        $post = Post::find($post);
+        $post = Post::findOrFail($post);
         $post->update([
             'title' => $request->title,
             'body' => $request->body
@@ -100,7 +100,7 @@ class PostController extends Controller
      */
     public function destroy($post)
     {
-        Post::find($post)->delete();
+        Post::findOrFail($post)->delete();
 
         return redirect()->route('post.index');
     }
