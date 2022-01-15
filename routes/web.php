@@ -19,9 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    // return view('dashboard');
+    return redirect()->route('post.index');
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('post', PostController::class);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
