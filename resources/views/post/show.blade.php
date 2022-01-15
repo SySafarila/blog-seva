@@ -12,6 +12,6 @@
     </form>
     @endauth
     <h1 class="mt-3">{{ $post->title }}</h1>
-    <p>{{ $post->body }}</p>
+    <p>{!! $post->body !!}</p>
 </div>
 @endsection

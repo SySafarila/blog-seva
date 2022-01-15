@@ -13,7 +13,10 @@
         @foreach ($posts as $post)
         <div>
             <h3><a href="{{ route('post.show', $post) }}" class="text-decoration-none">{{ $post->title }}</a></h3>
-            <p class="m-0">{{ $post->body }}</p>
+            <p class="m-0 text-truncate">{!! $post->body !!}</p>
+            <small>
+                <a href="{{ route('post.show', $post) }}">Read More</a>
+            </small>
         </div>
         @endforeach
     </div>
